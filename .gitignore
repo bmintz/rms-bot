@@ -1,0 +1,6 @@
+config.py
+*.py[cod]
+__pycache__
+*.swp
+.venv/
+venv/
