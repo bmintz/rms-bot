@@ -32,7 +32,7 @@
 
 		'interjection': {
 			'message':
-				"I'd just like to interject for moment. "
+				"I'd just like to interject for a moment. "
 				"What you're refering to as Linux, is in fact, GNU/Linux, "
 				"or as I've recently taken to calling it, GNU plus Linux. "
 				'Linux is not an operating system unto itself, '
