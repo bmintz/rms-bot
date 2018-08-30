@@ -1,19 +1,14 @@
-import re
-
 from discord.ext import commands
-
-gnu_re = re.compile(r'(?P<GNU>GNU)?(?:.?|\s*)(?P<Linux>Linux)', re.IGNORECASE)
 
 def check(text):
 	"""return whether the message contains an occurence of "Linux" without "GNU" """
-	iterated = False
-	for match in gnu_re.finditer(text):
-		iterated = True
-		if match['GNU']:
+	had_occurrence = False
+	for word in text.lower().split():
+		if re.match(r'gnu.linux', word):
 			return False
-	# don't return True if the message contains neither GNU nor Linux
-	# (ie, finditer was empty)
-	return iterated
+		if word == 'linux':
+			had_occurrence = True
+	return had_occurrence
 
 class Interjection:
 	def __init__(self, bot, interjection):
