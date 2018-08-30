@@ -5,8 +5,7 @@ from discord.ext import commands
 gnu_re = re.compile(r'(?P<GNU>GNU)?(?:.?|\s*)(?P<Linux>Linux)', re.IGNORECASE)
 
 def check(text):
-	match = gnu_re.search(text)
-	return match and match['Linux'] and not match['GNU']
+	return all(not match['GNU'] for match in gnu_re.finditer(text))
 
 class Interjection:
 	def __init__(self, bot, interjection):
