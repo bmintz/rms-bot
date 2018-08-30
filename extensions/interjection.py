@@ -5,7 +5,7 @@ from discord.ext import commands
 gnu_re = re.compile(r'(?P<GNU>GNU)?(?:.?|\s*)(?P<Linux>Linux)', re.IGNORECASE)
 
 def check(text):
-	"""return whether the message contains an occurence of "Linux" without "GNU""""
+	"""return whether the message contains an occurence of "Linux" without "GNU" """
 	iterated = False
 	for match in gnu_re.finditer(text):
 		iterated = True
