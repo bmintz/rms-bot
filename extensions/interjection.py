@@ -1,3 +1,5 @@
+import re
+
 from discord.ext import commands
 
 def check(text):
